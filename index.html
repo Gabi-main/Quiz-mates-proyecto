@@ -1,84 +1,214 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cálculo Quiz: Límites</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
-    <script type="text/javascript" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-    </script>
-    <script>
-      MathJax = {
-        tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        svg: {
-          fontCache: 'global'
-        }
-      };
-    </script>
-    
-</head>
-<body>
+/* Importar fuente Poppins de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-    <header>
-        <div class="header-content">
-            <h1>Cálculo Quiz: Límites</h1>
-            <p>Pon a prueba tus conocimientos sobre límites matemáticos.</p>
-        </div>
-    </header>
+:root {
+    --primary-color: #3498db; /* Azul vibrante */
+    --secondary-color: #2c3e50; /* Azul oscuro para texto */
+    --background-color: #f0f2f5; /* Gris claro de fondo */
+    --card-background: #ffffff;
+    --success-color: #27ae60;
+    --error-color: #c0392b;
+}
 
-    <main>
-        <section id="name-input-section" class="card">
-            <h2>¡Listo para Empezar!</h2>
-            <p>Ingresa tu alias:</p>
-            <input type="text" id="playerName" placeholder="Tu Nombre o Alias" required>
-            <button onclick="iniciarQuiz()">Comenzar</button>
-        </section>
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
 
-        <section id="quiz-container" class="hidden card">
-            <div class="quiz-header">
-                <h2 id="question-number">Pregunta 1/15</h2>
-                <div class="score-display">Puntuación: <span id="current-score">0</span></div>
-            </div>
-            
-            <p id="question-text" class="math-question"></p>
-            
-            <div id="options-container" class="options">
-                </div>
-        </section>
+header {
+    background: linear-gradient(135deg, var(--secondary-color), #34495e);
+    color: white;
+    width: 100%;
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+header h1 {
+    margin: 0;
+    font-weight: 700;
+}
+header p {
+    margin: 5px 0 0;
+    font-weight: 400;
+    opacity: 0.9;
+}
 
-        <section id="review-section" class="hidden card">
-            <h2>Resultados</h2>
-            <p id="final-summary" class="summary-text"></p>
-            <div id="review-details">
-                </div>
-            <button onclick="mostrarSeccion('scores-section')">Ver Tabla de Puntuaciones</button>
-        </section>
+main {
+    width: 95%;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
 
-        <section id="scores-section" class="card">
-            <h2>🥇 Top Scores</h2>
-            <table id="high-scores-table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Puntuación</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    </tbody>
-            </table>
-            <button id="restart-button" onclick="window.location.reload()">Reiniciar Quiz</button>
-        </section>
-    </main>
+/* Estilo de Tarjeta (Card) para todas las secciones */
+.card {
+    background: var(--card-background);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 20px;
+}
 
-    <footer>
-        <p>&copy; 2025 Cálculo Quiz</p>
-    </footer>
+/* Encabezado del Quiz */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ecf0f1;
+}
+.quiz-header h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+    color: var(--primary-color);
+}
+.score-display {
+    font-weight: 700;
+    color: var(--success-color);
+    font-size: 1.2em;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+/* Estilo de la Pregunta */
+#question-text {
+    font-size: 1.6em; /* Mayor tamaño para la ecuación */
+    font-weight: 600;
+    margin: 30px 0;
+    text-align: center;
+    line-height: 2; /* Espacio para fracciones */
+}
+
+/* Botones y Opciones */
+input[type="text"], button {
+    padding: 12px 18px;
+    margin: 10px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    border: 1px solid #bdc3c7;
+    transition: border-color 0.3s;
+}
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.options button {
+    margin-bottom: 10px;
+    background-color: #f8f9fa; /* Fondo muy claro para opciones */
+    color: var(--secondary-color);
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    line-height: 1.6; 
+    padding: 18px 10px;
+    font-size: 1.1em;
+}
+
+.options button:hover:not(:disabled) {
+    background-color: #e9ecef;
+}
+
+/* Estilos de Revisión */
+.summary-text {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.review-item {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+.review-question {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+    font-size: 1.1em;
+}
+.review-user-answer {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-weight: 500;
+}
+.review-user-answer.correct {
+    background-color: #e6ffe6; 
+    border-left: 6px solid var(--success-color); 
+}
+.review-user-answer.incorrect {
+    background-color: #ffe6e6; 
+    border-left: 6px solid var(--error-color); 
+}
+.review-correct-answer {
+    margin-top: 5px;
+    font-size: 0.95em;
+    color: var(--success-color);
+    font-weight: 500;
+}
+
+/* Tabla de Puntuaciones */
+#high-scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#high-scores-table th, #high-scores-table td {
+    border: none;
+    padding: 15px;
+    text-align: left;
+}
+
+#high-scores-table th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+#high-scores-table tr:nth-child(even) {
+    background-color: #f7f9fb;
+}
+
+
+/* Utilidad */
+.hidden {
+    display: none !important;
+}
+
+footer {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: #bdc3c7;
+    font-size: 0.9em;
+    margin-top: auto;
+}
