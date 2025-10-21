@@ -85,7 +85,7 @@ const preguntas_base = [
 ];
 
 // --- CONSTANTES Y VARIABLES GLOBALES ---
-const NUM_PREGUNTAS_QUIZ = 50; 
+const NUM_PREGUNTAS_QUIZ = 10; 
 let nombreUsuario = '';
 let puntuacion = 0;
 let indicePreguntaActual = 0;
