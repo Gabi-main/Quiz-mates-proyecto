@@ -60,6 +60,9 @@ button:hover:not(:disabled) {
     margin-bottom: 10px;
     background-color: #ecf0f1;
     color: #333;
+    /* Asegura que las opciones de cálculo tengan suficiente espacio */
+    line-height: 1.5; 
+    padding: 15px 10px;
 }
 
 .options button:hover:not(:disabled) {
@@ -68,10 +71,11 @@ button:hover:not(:disabled) {
 
 /* Estilos del Quiz */
 #question-text {
-    font-size: 1.2em;
+    font-size: 1.3em; /* Un poco más grande para las ecuaciones */
     font-weight: bold;
     margin: 20px 0;
     text-align: center;
+    line-height: 1.8; /* Espacio para ecuaciones altas */
 }
 
 .score-display {
