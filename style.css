@@ -21,7 +21,7 @@ header {
 
 main {
     width: 90%;
-    max-width: 700px;
+    max-width: 750px; /* Un poco más amplio para la revisión */
     margin: 30px auto;
 }
 
@@ -60,7 +60,6 @@ button:hover:not(:disabled) {
     margin-bottom: 10px;
     background-color: #ecf0f1;
     color: #333;
-    /* Asegura que las opciones de cálculo tengan suficiente espacio */
     line-height: 1.5; 
     padding: 15px 10px;
 }
@@ -71,11 +70,11 @@ button:hover:not(:disabled) {
 
 /* Estilos del Quiz */
 #question-text {
-    font-size: 1.3em; /* Un poco más grande para las ecuaciones */
+    font-size: 1.3em; 
     font-weight: bold;
     margin: 20px 0;
     text-align: center;
-    line-height: 1.8; /* Espacio para ecuaciones altas */
+    line-height: 1.8;
 }
 
 .score-display {
@@ -83,6 +82,38 @@ button:hover:not(:disabled) {
     font-weight: bold;
     color: #27ae60;
 }
+
+/* Estilos de Revisión */
+.review-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+.review-question {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+.review-user-answer {
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+}
+.review-user-answer.correct {
+    background-color: #e6ffe6; /* Verde muy claro */
+    border-left: 5px solid #27ae60; /* Verde sólido */
+}
+.review-user-answer.incorrect {
+    background-color: #ffe6e6; /* Rojo muy claro */
+    border-left: 5px solid #c0392b; /* Rojo sólido */
+}
+.review-correct-answer {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #27ae60;
+}
+
 
 /* Tabla de Puntuaciones */
 #high-scores-table {
