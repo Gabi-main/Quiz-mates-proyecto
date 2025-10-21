@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz de Límites de Cálculo 🧠</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']] // Define $...$ como delimitador inline
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    
 </head>
 <body>
 
@@ -25,12 +40,10 @@
             <h2 id="question-number">Pregunta 1/X</h2>
             <div class="score-display">Puntuación: <span id="current-score">0</span></div>
             
-            <p id="question-text">Aquí va la pregunta.</p>
+            <p id="question-text" class="math-question">Aquí va la pregunta.</p>
             
             <div id="options-container" class="options">
                 </div>
-
-            <div id="result-message"></div>
             
         </section>
 
@@ -51,7 +64,7 @@
     </main>
 
     <footer>
-        <p>Desarrollado para hospedaje estático (Vercel).</p>
+        <p>Web estática preparada para Vercel.</p>
     </footer>
 
     <script src="script.js"></script>
