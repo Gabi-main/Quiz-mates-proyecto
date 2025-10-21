@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Límites de Cálculo (Nivel Básico) 🧠</title>
+    <title>Quiz de Cálculo Avanzado: Límites 🧠</title>
     <link rel="stylesheet" href="style.css">
     
     <script type="text/javascript" async
@@ -12,7 +12,7 @@
     <script>
       MathJax = {
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']] // Define $...$ como delimitador inline
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
         },
         svg: {
           fontCache: 'global'
@@ -24,27 +24,34 @@
 <body>
 
     <header>
-        <h1>Quiz de Cálculo: Límites (Nivel Básico)</h1>
-        <p>Práctico con sustitución y reglas sencillas</p>
+        <h1>Quiz de Cálculo: Límites</h1>
+        <p>50 Preguntas Seleccionadas al Azar</p>
     </header>
 
     <main>
         <section id="name-input-section">
             <h2>Comenzar Quiz</h2>
-            <p>Ingresa tu nombre para registrar tu puntuación:</p>
+            <p>Ingresa tu nombre para registrar tu puntuación y empezar:</p>
             <input type="text" id="playerName" placeholder="Tu Nombre o Alias" required>
-            <button onclick="iniciarQuiz()">Empezar</button>
+            <button onclick="iniciarQuiz()">Empezar Quiz</button>
         </section>
 
         <section id="quiz-container" class="hidden">
-            <h2 id="question-number">Pregunta 1/X</h2>
+            <h2 id="question-number">Pregunta 1/50</h2>
             <div class="score-display">Puntuación: <span id="current-score">0</span></div>
             
             <p id="question-text" class="math-question">Aquí va la pregunta.</p>
             
             <div id="options-container" class="options">
                 </div>
-            
+        </section>
+
+        <section id="review-section" class="hidden">
+            <h2>Resultados del Quiz</h2>
+            <p id="final-summary"></p>
+            <div id="review-details">
+                </div>
+            <button onclick="mostrarSeccion('scores-section')">Ver Puntuaciones Máximas</button>
         </section>
 
         <section id="scores-section">
@@ -59,7 +66,7 @@
                 <tbody>
                     </tbody>
             </table>
-            <button id="restart-button" class="hidden" onclick="window.location.reload()">Reiniciar Quiz</button>
+            <button id="restart-button" onclick="window.location.reload()">Reiniciar Quiz</button>
         </section>
     </main>
 
