@@ -1,98 +1,86 @@
-// --- DATOS DEL QUIZ: Preguntas de Límites de Cálculo ---
+// --- DATOS DEL QUIZ: Preguntas de Límites de Cálculo MÁS FÁCILES ---
 const preguntas = [
+    // 1. Sustitución Directa (fácil)
     {
-        pregunta: "Teórico: ¿Qué tipo de indeterminación resulta de evaluar $ \\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} $ directamente?",
-        opciones: ["$ \\frac{\\infty}{\\infty} $", "$ \\infty - \\infty $", "$ \\frac{0}{0} $", "$ 1^{\\infty} $"],
-        respuestaCorrecta: "$ \\frac{0}{0} $",
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to 3} (2x + 1) $?",
+        opciones: ["$ 5 $", "$ 7 $", "$ 6 $", "$ 9 $"],
+        respuestaCorrecta: "$ 7 $", // 2(3) + 1 = 7
+        tipo: "Sustitución"
+    },
+    // 2. Sustitución Directa (polinómico)
+    {
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to 1} (x^2 + 4x - 5) $?",
+        opciones: ["$ 0 $", "$ 1 $", "$ 4 $", "$ 2 $"],
+        respuestaCorrecta: "$ 0 $", // 1 + 4 - 5 = 0
+        tipo: "Sustitución"
+    },
+    // 3. Límite al Infinito (Grados Iguales - Coeficientes 1/1)
+    {
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to \\infty} \\frac{x^2 - 1}{x^2 + 5} $?",
+        opciones: ["$ \\infty $", "$ 0 $", "$ 1 $", "$ -1 $"],
+        respuestaCorrecta: "$ 1 $", // 1/1 = 1
+        tipo: "Infinito"
+    },
+    // 4. Límite al Infinito (Grados Iguales - Coeficientes fijos)
+    {
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to \\infty} \\frac{5x^3 - x}{2x^3 + 7} $?",
+        opciones: ["$ 5 $", "$ 0 $", "$ \\frac{5}{2} $", "$ \\infty $"],
+        respuestaCorrecta: "$ \\frac{5}{2} $", // 5/2
+        tipo: "Infinito"
+    },
+    // 5. Límite al Infinito (Grado Menor - El más fácil es 0)
+    {
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to \\infty} \\frac{x + 10}{x^2} $?",
+        opciones: ["$ 1 $", "$ 0 $", "$ 10 $", "$ \\infty $"],
+        respuestaCorrecta: "$ 0 $", // Grado num < Grado den
+        tipo: "Infinito"
+    },
+    // 6. Límite con Raíz (Sustitución directa)
+    {
+        pregunta: "Práctico: Calcular $ \\lim_{x \\to 4} \\sqrt{x + 5} $",
+        opciones: ["$ 3 $", "$ 9 $", "$ 4 $", "$ 5 $"],
+        respuestaCorrecta: "$ 3 $", // sqrt(4+5) = sqrt(9) = 3
+        tipo: "Sustitución"
+    },
+    // 7. Límite Trigonométrico Fundamental
+    {
+        pregunta: "Práctico: ¿Cuál es el valor del límite fundamental $ \\lim_{x \\to 0} \\frac{\\sin(x)}{x} $?",
+        opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "$ -1 $"],
+        respuestaCorrecta: "$ 1 $", 
+        tipo: "Fundamental"
+    },
+    // 8. Límite de Constante (Teórico-Práctico)
+    {
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to 10} 7 $?",
+        opciones: ["$ 10 $", "$ 7 $", "$ 0 $", "$ \\infty $"],
+        respuestaCorrecta: "$ 7 $", // Límite de una constante es la constante
         tipo: "Teórico"
     },
+    // 9. Sustitución Directa (racional simple)
     {
-        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to \\infty} \\frac{3x^2 + 5x}{x^2 - 2} $?",
-        opciones: ["$ \\infty $", "$ 3 $", "$ 0 $", "$ \\frac{3}{2} $"],
-        respuestaCorrecta: "$ 3 $",
-        tipo: "Práctico"
+        pregunta: "Práctico: Calcular $ \\lim_{x \\to -1} \\frac{3x}{x - 2} $",
+        opciones: ["$ -1 $", "$ 1 $", "$ \\frac{3}{2} $", "$ 0 $"],
+        respuestaCorrecta: "$ 1 $", // 3(-1)/(-1-2) = -3/-3 = 1
+        tipo: "Sustitución"
     },
+    // 10. Sustitución Directa (Potencia)
     {
-        pregunta: "Teórico: ¿Qué método se suele aplicar para resolver una indeterminación $ \\frac{0}{0} $ con funciones polinómicas?",
-        opciones: ["Racionalización", "Regla de L'Hôpital", "Factorización", "Teorema de Sandwích"],
-        respuestaCorrecta: "Factorización",
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to 2} (x^3 - 8) $?",
+        opciones: ["$ 0 $", "$ 8 $", "$ 4 $", "$ 16 $"],
+        respuestaCorrecta: "$ 0 $", // 2^3 - 8 = 8 - 8 = 0
+        tipo: "Sustitución"
+    },
+    // 11. Teórico Sencillo
+    {
+        pregunta: "Teórico: Si $ \\lim_{x \\to a^+} f(x) = L $ y $ \\lim_{x \\to a^-} f(x) = L $, ¿qué podemos afirmar?",
+        opciones: ["$ L = 0 $", "El límite no existe", "$ \\lim_{x \\to a} f(x) = L $", "La función es par"],
+        respuestaCorrecta: "$ \\lim_{x \\to a} f(x) = L $",
         tipo: "Teórico"
-    },
-    {
-        pregunta: "Práctico: ¿Cuál es el límite fundamental de $ \\lim_{x \\to 0} \\frac{\\sin(x)}{x} $?",
-        opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "No existe"],
-        respuestaCorrecta: "$ 1 $",
-        tipo: "Práctico"
-    },
-    {
-        pregunta: "Práctico: ¿Cuál es el límite lateral de $ \\lim_{x \\to 0^+} \\frac{1}{x} $?",
-        opciones: ["$ -\\infty $", "$ 0 $", "$ +\\infty $", "$ 1 $"],
-        respuestaCorrecta: "$ +\\infty $",
-        tipo: "Práctico"
-    },
-    {
-        pregunta: "Teórico: ¿Cuál es la condición para que un límite $ \\lim_{x \\to a} f(x) $ exista?",
-        opciones: ["La función es continua en 'a'", "Los límites laterales son iguales", "La función está definida en 'a'", "Es un límite al infinito"],
-        respuestaCorrecta: "Los límites laterales son iguales",
-        tipo: "Teórico"
-    },
-    {
-        pregunta: "Práctico: Calcular $ \\lim_{x \\to 1} \\frac{x^3 - 1}{x - 1} $",
-        opciones: ["$ 0 $", "$ 1 $", "$ 3 $", "$ \\infty $"],
-        respuestaCorrecta: "$ 3 $",
-        tipo: "Práctico"
-    },
-    {
-        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to \\infty} \\frac{\\ln(x)}{x} $?",
-        opciones: ["$ \\infty $", "$ 1 $", "$ 0 $", "$ e $"],
-        respuestaCorrecta: "$ 0 $",
-        tipo: "Práctico"
-    },
-    {
-        pregunta: "Teórico: ¿Qué indeterminación NO puede resolverse directamente con la Regla de L'Hôpital?",
-        opciones: ["$ \\frac{0}{0} $", "$ \\frac{\\infty}{\\infty} $", "$ \\infty - \\infty $", "Todas pueden transformarse para usar L'Hôpital"],
-        respuestaCorrecta: "$ \\infty - \\infty $",
-        tipo: "Teórico"
-    },
-    {
-        pregunta: "Práctico: Calcular $ \\lim_{x \\to 0} x \\ln(x) $",
-        opciones: ["$ 0 $", "$ 1 $", "$ -\\infty $", "$ \\infty $"],
-        respuestaCorrecta: "$ 0 $",
-        tipo: "Práctico"
-    },
-    {
-        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to \\infty} (1 + \\frac{1}{x})^x $?",
-        opciones: ["$ 1 $", "$ \\infty $", "$ e $", "$ 0 $"],
-        respuestaCorrecta: "$ e $",
-        tipo: "Práctico"
-    },
-    {
-        pregunta: "Teórico: Cuando el grado del numerador es menor que el grado del denominador en un límite al infinito de una función racional, ¿cuál es el resultado?",
-        opciones: ["$ \\infty $", "El coeficiente principal", "$ 0 $", "Depende de los signos"],
-        respuestaCorrecta: "$ 0 $",
-        tipo: "Teórico"
-    },
-    {
-        pregunta: "Práctico: Calcular $ \\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4} $",
-        opciones: ["$ \\frac{1}{4} $", "$ 0 $", "$ \\infty $", "$ \\frac{1}{2} $"],
-        respuestaCorrecta: "$ \\frac{1}{4} $",
-        tipo: "Práctico"
-    },
-    {
-        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to -1} \\frac{x^2 + 3x + 2}{x + 1} $?",
-        opciones: ["$ 0 $", "$ 1 $", "$ -1 $", "$ -2 $"],
-        respuestaCorrecta: "$ 1 $",
-        tipo: "Práctico"
-    },
-    {
-        pregunta: "Práctico: Calcular $ \\lim_{x \\to \\infty} \\frac{x^3 + 1}{x^2 + 5} $",
-        opciones: ["$ 1 $", "$ 0 $", "$ \\infty $", "$ -\\infty $"],
-        respuestaCorrecta: "$ \\infty $",
-        tipo: "Práctico"
     }
 ];
 
 // --- VARIABLES DE ESTADO DEL QUIZ ---
+const NUM_PREGUNTAS_POR_QUIZ = 10; // Puedes ajustar el número de preguntas por sesión
 let nombreUsuario = '';
 let puntuacion = 0;
 let indicePreguntaActual = 0;
@@ -108,6 +96,27 @@ const $questionNumber = document.getElementById('question-number');
 const $restartButton = document.getElementById('restart-button');
 
 // --- LÓGICA DE JUEGO ---
+
+/**
+ * Función para mezclar un array (Algoritmo de Fisher-Yates)
+ * @param {Array} array - El array a mezclar.
+ */
+function shuffle(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // Mientras queden elementos a mezclar.
+    while (currentIndex != 0) {
+        // Seleccionar un elemento restante.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // Intercambiarlo con el elemento actual.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
+}
 
 /**
  * Inicia el quiz: guarda el nombre y muestra el contenedor del quiz.
@@ -126,8 +135,11 @@ function iniciarQuiz() {
     $quizContainer.classList.remove('hidden');
     $restartButton.classList.add('hidden');
     
-    // Mezclar preguntas para que el orden cambie en cada juego
-    preguntasMezcladas = [...preguntas].sort(() => Math.random() - 0.5);
+    // 1. Mezclar todas las preguntas disponibles.
+    let todasMezcladas = shuffle([...preguntas]);
+    
+    // 2. Seleccionar solo las primeras N para el quiz actual.
+    preguntasMezcladas = todasMezcladas.slice(0, NUM_PREGUNTAS_POR_QUIZ);
     
     indicePreguntaActual = 0;
     puntuacion = 0;
@@ -149,21 +161,23 @@ function mostrarPregunta() {
     const pregunta = preguntasMezcladas[indicePreguntaActual];
     
     $questionNumber.textContent = `Pregunta ${indicePreguntaActual + 1}/${preguntasMezcladas.length} (${pregunta.tipo})`;
-    $questionText.innerHTML = pregunta.pregunta; // Usar innerHTML para interpretar LaTeX/HTML
+    $questionText.innerHTML = pregunta.pregunta; 
 
     $optionsContainer.innerHTML = ''; // Limpiar opciones anteriores
 
+    // Mezclar opciones
+    let opcionesMezcladas = shuffle([...pregunta.opciones]);
+
     // Crear y añadir botones de opción
-    pregunta.opciones.forEach(opcion => {
+    opcionesMezcladas.forEach(opcion => {
         const button = document.createElement('button');
-        button.innerHTML = opcion; // Usar innerHTML para opciones con LaTeX
+        button.innerHTML = opcion; 
         button.onclick = () => verificarRespuesta(opcion);
         $optionsContainer.appendChild(button);
     });
 
-    // ¡Importante para MathJax! Forzar a MathJax a renderizar las nuevas ecuaciones
+    // Forzar a MathJax a renderizar las nuevas ecuaciones
     if (window.MathJax) {
-        // Usa MathJax.typesetPromise() para asegurar que la renderización se complete
         MathJax.typesetPromise([$questionText, $optionsContainer]);
     }
 }
@@ -209,7 +223,6 @@ const LS_KEY = 'mathQuizHighScores';
 
 /**
  * Carga las puntuaciones guardadas del LocalStorage.
- * @returns {Array} Array de objetos {nombre: string, score: number}.
  */
 function obtenerPuntuaciones() {
     const scoresJSON = localStorage.getItem(LS_KEY);
@@ -218,8 +231,6 @@ function obtenerPuntuaciones() {
 
 /**
  * Guarda la nueva puntuación en el LocalStorage.
- * @param {string} nombre - Nombre del jugador.
- * @param {number} score - Puntuación obtenida.
  */
 function guardarPuntuacion(nombre, score) {
     const scores = obtenerPuntuaciones();
