@@ -1,7 +1,19 @@
+/* Importar fuente Poppins de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #3498db; /* Azul vibrante */
+    --secondary-color: #2c3e50; /* Azul oscuro para texto */
+    --background-color: #f0f2f5; /* Gris claro de fondo */
+    --card-background: #ffffff;
+    --success-color: #27ae60;
+    --error-color: #c0392b;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
     margin: 0;
     padding: 0;
     display: flex;
@@ -11,109 +23,156 @@ body {
 }
 
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, var(--secondary-color), #34495e);
     color: white;
     width: 100%;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+header h1 {
+    margin: 0;
+    font-weight: 700;
+}
+header p {
+    margin: 5px 0 0;
+    font-weight: 400;
+    opacity: 0.9;
 }
 
 main {
-    width: 90%;
-    max-width: 750px; /* Un poco más amplio para la revisión */
-    margin: 30px auto;
+    width: 95%;
+    max-width: 800px;
+    margin: 0 auto 30px;
 }
 
-section {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+/* Estilo de Tarjeta (Card) para todas las secciones */
+.card {
+    background: var(--card-background);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     margin-bottom: 20px;
 }
 
-/* Estilos de botones y entradas */
+/* Encabezado del Quiz */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ecf0f1;
+}
+.quiz-header h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin: 0;
+    color: var(--primary-color);
+}
+.score-display {
+    font-weight: 700;
+    color: var(--success-color);
+    font-size: 1.2em;
+}
+
+/* Estilo de la Pregunta */
+#question-text {
+    font-size: 1.6em; /* Mayor tamaño para la ecuación */
+    font-weight: 600;
+    margin: 30px 0;
+    text-align: center;
+    line-height: 2; /* Espacio para fracciones */
+}
+
+/* Botones y Opciones */
 input[type="text"], button {
-    padding: 10px 15px;
-    margin: 5px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 12px 18px;
+    margin: 10px 0;
+    border-radius: 8px;
     font-size: 16px;
     width: 100%;
     box-sizing: border-box;
 }
 
+input[type="text"] {
+    border: 1px solid #bdc3c7;
+    transition: border-color 0.3s;
+}
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
 button {
-    background-color: #3498db;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
 button:hover:not(:disabled) {
     background-color: #2980b9;
+    transform: translateY(-1px);
 }
 
 .options button {
     margin-bottom: 10px;
-    background-color: #ecf0f1;
-    color: #333;
-    line-height: 1.5; 
-    padding: 15px 10px;
+    background-color: #f8f9fa; /* Fondo muy claro para opciones */
+    color: var(--secondary-color);
+    border: 1px solid #e0e0e0;
+    text-align: center;
+    line-height: 1.6; 
+    padding: 18px 10px;
+    font-size: 1.1em;
 }
 
 .options button:hover:not(:disabled) {
-    background-color: #bdc3c7;
-}
-
-/* Estilos del Quiz */
-#question-text {
-    font-size: 1.3em; 
-    font-weight: bold;
-    margin: 20px 0;
-    text-align: center;
-    line-height: 1.8;
-}
-
-.score-display {
-    text-align: right;
-    font-weight: bold;
-    color: #27ae60;
+    background-color: #e9ecef;
 }
 
 /* Estilos de Revisión */
+.summary-text {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+}
 .review-item {
-    border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 15px;
-    border-radius: 5px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
 }
 .review-question {
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 10px;
-    color: #2c3e50;
+    color: var(--secondary-color);
+    font-size: 1.1em;
 }
 .review-user-answer {
-    padding: 5px;
+    padding: 10px;
     margin: 5px 0;
-    border-radius: 3px;
+    border-radius: 5px;
+    font-weight: 500;
 }
 .review-user-answer.correct {
-    background-color: #e6ffe6; /* Verde muy claro */
-    border-left: 5px solid #27ae60; /* Verde sólido */
+    background-color: #e6ffe6; 
+    border-left: 6px solid var(--success-color); 
 }
 .review-user-answer.incorrect {
-    background-color: #ffe6e6; /* Rojo muy claro */
-    border-left: 5px solid #c0392b; /* Rojo sólido */
+    background-color: #ffe6e6; 
+    border-left: 6px solid var(--error-color); 
 }
 .review-correct-answer {
     margin-top: 5px;
-    font-size: 0.9em;
-    color: #27ae60;
+    font-size: 0.95em;
+    color: var(--success-color);
+    font-weight: 500;
 }
-
 
 /* Tabla de Puntuaciones */
 #high-scores-table {
@@ -123,14 +182,21 @@ button:hover:not(:disabled) {
 }
 
 #high-scores-table th, #high-scores-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
+    border: none;
+    padding: 15px;
     text-align: left;
 }
 
 #high-scores-table th {
-    background-color: #f2f2f2;
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+    font-weight: 700;
+    color: var(--secondary-color);
 }
+#high-scores-table tr:nth-child(even) {
+    background-color: #f7f9fb;
+}
+
 
 /* Utilidad */
 .hidden {
@@ -138,10 +204,11 @@ button:hover:not(:disabled) {
 }
 
 footer {
-    margin-top: auto;
     width: 100%;
-    padding: 10px 0;
+    padding: 15px 0;
     text-align: center;
-    background-color: #333;
-    color: white;
+    background-color: var(--secondary-color);
+    color: #bdc3c7;
+    font-size: 0.9em;
+    margin-top: auto;
 }
