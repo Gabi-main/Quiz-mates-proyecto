@@ -1,33 +1,93 @@
 // --- DATOS DEL QUIZ: Preguntas de Límites de Cálculo ---
 const preguntas = [
     {
-        pregunta: "Teórico: ¿Qué tipo de indeterminación resulta de evaluar $\\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2}$ directamente?",
-        opciones: ["$\\frac{\\infty}{\\infty}$", "$\\infty - \\infty$", "$\\frac{0}{0}$", "$1^{\\infty}$"],
-        respuestaCorrecta: "$\\frac{0}{0}$",
+        pregunta: "Teórico: ¿Qué tipo de indeterminación resulta de evaluar $ \\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} $ directamente?",
+        opciones: ["$ \\frac{\\infty}{\\infty} $", "$ \\infty - \\infty $", "$ \\frac{0}{0} $", "$ 1^{\\infty} $"],
+        respuestaCorrecta: "$ \\frac{0}{0} $",
         tipo: "Teórico"
     },
     {
-        pregunta: "Práctico: ¿Cuál es el límite de $\\lim_{x \\to \\infty} \\frac{3x^2 + 5x}{x^2 - 2}$?",
-        opciones: ["$\infty$", "3", "0", "$\\frac{3}{2}$"],
-        respuestaCorrecta: "3",
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to \\infty} \\frac{3x^2 + 5x}{x^2 - 2} $?",
+        opciones: ["$ \\infty $", "$ 3 $", "$ 0 $", "$ \\frac{3}{2} $"],
+        respuestaCorrecta: "$ 3 $",
         tipo: "Práctico"
     },
     {
-        pregunta: "Teórico: ¿Qué método se suele aplicar para resolver una indeterminación $\\frac{0}{0}$ con funciones polinómicas?",
+        pregunta: "Teórico: ¿Qué método se suele aplicar para resolver una indeterminación $ \\frac{0}{0} $ con funciones polinómicas?",
         opciones: ["Racionalización", "Regla de L'Hôpital", "Factorización", "Teorema de Sandwích"],
         respuestaCorrecta: "Factorización",
         tipo: "Teórico"
     },
     {
-        pregunta: "Práctico: ¿Cuál es el límite de $\\lim_{x \\to 0} \\frac{\\sin(x)}{x}$?",
-        opciones: ["0", "1", "$\\infty$", "No existe"],
-        respuestaCorrecta: "1",
+        pregunta: "Práctico: ¿Cuál es el límite fundamental de $ \\lim_{x \\to 0} \\frac{\\sin(x)}{x} $?",
+        opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "No existe"],
+        respuestaCorrecta: "$ 1 $",
         tipo: "Práctico"
     },
     {
-        pregunta: "Práctico: ¿Cuál es el límite de $\\lim_{x \\to 0^+} \\frac{1}{x}$?",
-        opciones: ["$-\\infty$", "0", "$+\\infty$", "1"],
-        respuestaCorrecta: "$+\\infty$",
+        pregunta: "Práctico: ¿Cuál es el límite lateral de $ \\lim_{x \\to 0^+} \\frac{1}{x} $?",
+        opciones: ["$ -\\infty $", "$ 0 $", "$ +\\infty $", "$ 1 $"],
+        respuestaCorrecta: "$ +\\infty $",
+        tipo: "Práctico"
+    },
+    {
+        pregunta: "Teórico: ¿Cuál es la condición para que un límite $ \\lim_{x \\to a} f(x) $ exista?",
+        opciones: ["La función es continua en 'a'", "Los límites laterales son iguales", "La función está definida en 'a'", "Es un límite al infinito"],
+        respuestaCorrecta: "Los límites laterales son iguales",
+        tipo: "Teórico"
+    },
+    {
+        pregunta: "Práctico: Calcular $ \\lim_{x \\to 1} \\frac{x^3 - 1}{x - 1} $",
+        opciones: ["$ 0 $", "$ 1 $", "$ 3 $", "$ \\infty $"],
+        respuestaCorrecta: "$ 3 $",
+        tipo: "Práctico"
+    },
+    {
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to \\infty} \\frac{\\ln(x)}{x} $?",
+        opciones: ["$ \\infty $", "$ 1 $", "$ 0 $", "$ e $"],
+        respuestaCorrecta: "$ 0 $",
+        tipo: "Práctico"
+    },
+    {
+        pregunta: "Teórico: ¿Qué indeterminación NO puede resolverse directamente con la Regla de L'Hôpital?",
+        opciones: ["$ \\frac{0}{0} $", "$ \\frac{\\infty}{\\infty} $", "$ \\infty - \\infty $", "Todas pueden transformarse para usar L'Hôpital"],
+        respuestaCorrecta: "$ \\infty - \\infty $",
+        tipo: "Teórico"
+    },
+    {
+        pregunta: "Práctico: Calcular $ \\lim_{x \\to 0} x \\ln(x) $",
+        opciones: ["$ 0 $", "$ 1 $", "$ -\\infty $", "$ \\infty $"],
+        respuestaCorrecta: "$ 0 $",
+        tipo: "Práctico"
+    },
+    {
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to \\infty} (1 + \\frac{1}{x})^x $?",
+        opciones: ["$ 1 $", "$ \\infty $", "$ e $", "$ 0 $"],
+        respuestaCorrecta: "$ e $",
+        tipo: "Práctico"
+    },
+    {
+        pregunta: "Teórico: Cuando el grado del numerador es menor que el grado del denominador en un límite al infinito de una función racional, ¿cuál es el resultado?",
+        opciones: ["$ \\infty $", "El coeficiente principal", "$ 0 $", "Depende de los signos"],
+        respuestaCorrecta: "$ 0 $",
+        tipo: "Teórico"
+    },
+    {
+        pregunta: "Práctico: Calcular $ \\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4} $",
+        opciones: ["$ \\frac{1}{4} $", "$ 0 $", "$ \\infty $", "$ \\frac{1}{2} $"],
+        respuestaCorrecta: "$ \\frac{1}{4} $",
+        tipo: "Práctico"
+    },
+    {
+        pregunta: "Práctico: ¿Cuál es el límite de $ \\lim_{x \\to -1} \\frac{x^2 + 3x + 2}{x + 1} $?",
+        opciones: ["$ 0 $", "$ 1 $", "$ -1 $", "$ -2 $"],
+        respuestaCorrecta: "$ 1 $",
+        tipo: "Práctico"
+    },
+    {
+        pregunta: "Práctico: Calcular $ \\lim_{x \\to \\infty} \\frac{x^3 + 1}{x^2 + 5} $",
+        opciones: ["$ 1 $", "$ 0 $", "$ \\infty $", "$ -\\infty $"],
+        respuestaCorrecta: "$ \\infty $",
         tipo: "Práctico"
     }
 ];
@@ -74,7 +134,7 @@ function iniciarQuiz() {
     $currentScore.textContent = puntuacion;
 
     mostrarPregunta();
-    cargarPuntuaciones(); // Carga las puntuaciones al inicio para mostrarlas.
+    cargarPuntuaciones(); 
 }
 
 /**
@@ -100,6 +160,12 @@ function mostrarPregunta() {
         button.onclick = () => verificarRespuesta(opcion);
         $optionsContainer.appendChild(button);
     });
+
+    // ¡Importante para MathJax! Forzar a MathJax a renderizar las nuevas ecuaciones
+    if (window.MathJax) {
+        // Usa MathJax.typesetPromise() para asegurar que la renderización se complete
+        MathJax.typesetPromise([$questionText, $optionsContainer]);
+    }
 }
 
 /**
@@ -115,16 +181,13 @@ function verificarRespuesta(opcionSeleccionada) {
     if (opcionSeleccionada === pregunta.respuestaCorrecta) {
         puntuacion++;
         $currentScore.textContent = puntuacion;
-        // Opcional: Feedback visual de respuesta correcta (puedes añadir una clase CSS)
-    } else {
-        // Opcional: Feedback visual de respuesta incorrecta
     }
 
     // Avanzar a la siguiente pregunta después de un breve retraso
     setTimeout(() => {
         indicePreguntaActual++;
         mostrarPregunta();
-    }, 500); // 0.5 segundos de pausa
+    }, 500); 
 }
 
 /**
@@ -166,7 +229,7 @@ function guardarPuntuacion(nombre, score) {
     // Ordenar de mayor a menor puntuación
     scores.sort((a, b) => b.score - a.score);
 
-    // Limitar el registro a, por ejemplo, los 10 mejores
+    // Limitar el registro a los 10 mejores
     const topScores = scores.slice(0, 10); 
     
     localStorage.setItem(LS_KEY, JSON.stringify(topScores));
@@ -195,9 +258,9 @@ function cargarPuntuaciones() {
         const cellScore = row.insertCell();
         cellScore.textContent = item.score;
         
-        // Opcional: Destacar el primer lugar
+        // Destacar el primer lugar
         if (index === 0) {
-            row.style.backgroundColor = '#fffacd'; // color oro
+            row.style.backgroundColor = '#fffacd'; 
             cellName.textContent += ' 👑';
         }
     });
