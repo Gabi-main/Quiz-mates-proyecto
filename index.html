@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz de Cálculo Avanzado: Límites 🧠</title>
+    <title>Cálculo Quiz: Límites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     
     <script type="text/javascript" async
@@ -24,56 +25,36 @@
 <body>
 
     <header>
-        <h1>Quiz de Cálculo: Límites</h1>
-        <p>50 Preguntas Seleccionadas al Azar</p>
+        <div class="header-content">
+            <h1>Cálculo Quiz: Límites</h1>
+            <p>Pon a prueba tus conocimientos sobre límites matemáticos.</p>
+        </div>
     </header>
 
     <main>
-        <section id="name-input-section">
-            <h2>Comenzar Quiz</h2>
-            <p>Ingresa tu nombre para registrar tu puntuación y empezar:</p>
+        <section id="name-input-section" class="card">
+            <h2>¡Listo para Empezar!</h2>
+            <p>Ingresa tu alias:</p>
             <input type="text" id="playerName" placeholder="Tu Nombre o Alias" required>
-            <button onclick="iniciarQuiz()">Empezar Quiz</button>
+            <button onclick="iniciarQuiz()">Comenzar</button>
         </section>
 
-        <section id="quiz-container" class="hidden">
-            <h2 id="question-number">Pregunta 1/50</h2>
-            <div class="score-display">Puntuación: <span id="current-score">0</span></div>
+        <section id="quiz-container" class="hidden card">
+            <div class="quiz-header">
+                <h2 id="question-number">Pregunta 1/15</h2>
+                <div class="score-display">Puntuación: <span id="current-score">0</span></div>
+            </div>
             
-            <p id="question-text" class="math-question">Aquí va la pregunta.</p>
+            <p id="question-text" class="math-question"></p>
             
             <div id="options-container" class="options">
                 </div>
         </section>
 
-        <section id="review-section" class="hidden">
-            <h2>Resultados del Quiz</h2>
-            <p id="final-summary"></p>
+        <section id="review-section" class="hidden card">
+            <h2>Resultados</h2>
+            <p id="final-summary" class="summary-text"></p>
             <div id="review-details">
                 </div>
-            <button onclick="mostrarSeccion('scores-section')">Ver Puntuaciones Máximas</button>
+            <button onclick="mostrarSeccion('scores-section')">Ver Tabla de Puntuaciones</button>
         </section>
-
-        <section id="scores-section">
-            <h2>🏆 Puntuaciones Máximas</h2>
-            <table id="high-scores-table">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Puntuación</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    </tbody>
-            </table>
-            <button id="restart-button" onclick="window.location.reload()">Reiniciar Quiz</button>
-        </section>
-    </main>
-
-    <footer>
-        <p>Web estática preparada para Vercel.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
