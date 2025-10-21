@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    width: 90%;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+/* Estilos de botones y entradas */
+input[type="text"], button {
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+.options button {
+    margin-bottom: 10px;
+    background-color: #ecf0f1;
+    color: #333;
+}
+
+.options button:hover:not(:disabled) {
+    background-color: #bdc3c7;
+}
+
+/* Estilos del Quiz */
+#question-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.score-display {
+    text-align: right;
+    font-weight: bold;
+    color: #27ae60;
+}
+
+/* Tabla de Puntuaciones */
+#high-scores-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#high-scores-table th, #high-scores-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#high-scores-table th {
+    background-color: #f2f2f2;
+}
+
+/* Utilidad */
+.hidden {
+    display: none !important;
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
