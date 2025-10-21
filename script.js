@@ -1,4 +1,4 @@
-// --- DATOS DEL QUIZ: 50 Preguntas de Límites (Variedad y Dificultad) ---
+// --- DATOS DEL QUIZ: 50 Preguntas de Límites (Base Completa) ---
 const preguntas_base = [
     // Indeterminación 0/0 (Factorización)
     { pregunta: "Calcular $ \\lim_{x \\to 2} \\frac{x^2 - 4}{x - 2} $", opciones: ["$ 0 $", "$ 4 $", "$ 2 $", "$ 1 $"], respuestaCorrecta: "$ 4 $" },
@@ -30,69 +30,87 @@ const preguntas_base = [
     { pregunta: "Calcular $ \\lim_{x \\to \\pi} \\cos(x) $", opciones: ["$ 1 $", "$ 0 $", "$ -1 $", "$ \\frac{1}{2} $"], respuestaCorrecta: "$ -1 $" },
     // Límite al Infinito (Raíz de grado igual)
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} \\frac{\\sqrt{x^2 + 1}}{x} $", opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "$ -1 $"], respuestaCorrecta: "$ 1 $" },
-    
-    // -- Preguntas 16 a 50 (Variaciones y Complejidad Media) --
+    // Pregunta 16
     { pregunta: "Calcular $ \\lim_{x \\to 3} (x^3 - 27) $", opciones: ["$ 0 $", "$ 9 $", "$ 3 $", "$ 54 $"], respuestaCorrecta: "$ 0 $" },
+    // Pregunta 17
     { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{3x^2}{x} $", opciones: ["$ 3 $", "$ 0 $", "$ \\infty $", "$ 1 $"], respuestaCorrecta: "$ 0 $" },
+    // Pregunta 18
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} \\frac{5}{x^2} $", opciones: ["$ 5 $", "$ 0 $", "$ \\infty $", "$ 1 $"], respuestaCorrecta: "$ 0 $" },
+    // Pregunta 19
     { pregunta: "Calcular $ \\lim_{x \\to 1} \\frac{x^3 - 1}{x - 1} $", opciones: ["$ 1 $", "$ 3 $", "$ 0 $", "$ \\infty $"], respuestaCorrecta: "$ 3 $" },
+    // Pregunta 20
     { pregunta: "Calcular $ \\lim_{x \\to -1} (x^2 - 1) $", opciones: ["$ 2 $", "$ 0 $", "$ -2 $", "$ 1 $"], respuestaCorrecta: "$ 0 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to \\infty} \\frac{\\sin(x)}{x} $", opciones: ["$ 1 $", "$ \\infty $", "$ 0 $", "No existe"], respuestaCorrecta: "$ 0 $" }, // Teorema del Sándwich al infinito
+    // Pregunta 21
+    { pregunta: "Calcular $ \\lim_{x \\to \\infty} \\frac{\\sin(x)}{x} $", opciones: ["$ 1 $", "$ \\infty $", "$ 0 $", "No existe"], respuestaCorrecta: "$ 0 $" }, 
+    // Pregunta 22
     { pregunta: "Calcular $ \\lim_{x \\to 0^-} \\frac{1}{x} $", opciones: ["$ +\\infty $", "$ 0 $", "$ -\\infty $", "$ 1 $"], respuestaCorrecta: "$ -\\infty $" },
+    // Pregunta 23
     { pregunta: "Calcular $ \\lim_{x \\to 9} \\frac{x - 9}{\\sqrt{x} - 3} $", opciones: ["$ 3 $", "$ 6 $", "$ 0 $", "$ \\frac{1}{6} $"], respuestaCorrecta: "$ 6 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{e^{2x} - 1}{x} $", opciones: ["$ 1 $", "$ e $", "$ 2 $", "$ 0 $"], respuestaCorrecta: "$ 2 $" }, // L'Hôpital
-    { pregunta: "Calcular $ \\lim_{x \\to 1} \\frac{\\ln(x)}{x - 1} $", opciones: ["$ 0 $", "$ 1 $", "$ -1 $", "$ \\infty $"], respuestaCorrecta: "$ 1 $" }, // L'Hôpital
+    // Pregunta 24
+    { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{e^{2x} - 1}{x} $", opciones: ["$ 1 $", "$ e $", "$ 2 $", "$ 0 $"], respuestaCorrecta: "$ 2 $" }, 
+    // Pregunta 25
+    { pregunta: "Calcular $ \\lim_{x \\to 1} \\frac{\\ln(x)}{x - 1} $", opciones: ["$ 0 $", "$ 1 $", "$ -1 $", "$ \\infty $"], respuestaCorrecta: "$ 1 $" }, 
+    // Pregunta 26
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} (\\frac{2x}{x+1}) $", opciones: ["$ 1 $", "$ 2 $", "$ 0 $", "$ \\infty $"], respuestaCorrecta: "$ 2 $" },
+    // Pregunta 27
     { pregunta: "Calcular $ \\lim_{x \\to -2} \\frac{x^2 - 4}{x + 2} $", opciones: ["$ 4 $", "$ 0 $", "$ -4 $", "$ -2 $"], respuestaCorrecta: "$ -4 $" },
+    // Pregunta 28
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} \\sqrt{\\frac{9x^2}{x^2 + 1}} $", opciones: ["$ 3 $", "$ 9 $", "$ 1 $", "$ 0 $"], respuestaCorrecta: "$ 3 $" },
+    // Pregunta 29
     { pregunta: "Calcular $ \\lim_{x \\to 0} \\cos(x) $", opciones: ["$ 0 $", "$ 1 $", "$ -1 $", "$ \\infty $"], respuestaCorrecta: "$ 1 $" },
+    // Pregunta 30
     { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{5x}{\\sin(x)} $", opciones: ["$ 1 $", "$ 5 $", "$ 0 $", "$ \\frac{1}{5} $"], respuestaCorrecta: "$ 5 $" },
+    // Pregunta 31
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} (x^2 - x) $", opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "$ -\\infty $"], respuestaCorrecta: "$ \\infty $" },
+    // Pregunta 32
     { pregunta: "Calcular $ \\lim_{x \\to 1} \\frac{x^2 - 2x + 1}{x - 1} $", opciones: ["$ 0 $", "$ 1 $", "$ 2 $", "$ -1 $"], respuestaCorrecta: "$ 0 $" },
+    // Pregunta 33
     { pregunta: "Calcular $ \\lim_{x \\to 2} (x^2 + 3x) $", opciones: ["$ 6 $", "$ 10 $", "$ 4 $", "$ 8 $"], respuestaCorrecta: "$ 10 $" },
+    // Pregunta 34
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} \\frac{7x}{x^2 + 1} $", opciones: ["$ 7 $", "$ 0 $", "$ \\infty $", "$ 1 $"], respuestaCorrecta: "$ 0 $" },
+    // Pregunta 35
     { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{\\sin(5x)}{2x} $", opciones: ["$ 5 $", "$ 2 $", "$ \\frac{5}{2} $", "$ 0 $"], respuestaCorrecta: "$ \\frac{5}{2} $" },
+    // Pregunta 36
     { pregunta: "Calcular $ \\lim_{x \\to 4} (\\frac{1}{x}) $", opciones: ["$ 4 $", "$ 0 $", "$ \\frac{1}{4} $", "$ 1 $"], respuestaCorrecta: "$ \\frac{1}{4} $" },
+    // Pregunta 37
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} \\frac{1 - x^4}{x^4 + 1} $", opciones: ["$ 1 $", "$ 0 $", "$ -1 $", "$ \\infty $"], respuestaCorrecta: "$ -1 $" },
+    // Pregunta 38
     { pregunta: "Calcular $ \\lim_{x \\to -2} \\frac{x + 2}{x^2 - 4} $", opciones: ["$ -4 $", "$ -\\frac{1}{4} $", "$ 0 $", "$ 1 $"], respuestaCorrecta: "$ -\\frac{1}{4} $" },
+    // Pregunta 39
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} (\\frac{x+1}{x})^x $", opciones: ["$ 1 $", "$ 0 $", "$ e $", "$ \\infty $"], respuestaCorrecta: "$ e $" },
+    // Pregunta 40
     { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{x}{\\tan(x)} $", opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "$ 2 $"], respuestaCorrecta: "$ 1 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 3} \\frac{x^2 - 9}{x^2 - 2x - 3} $", opciones: ["$ \\frac{6}{4} $", "$ 0 $", "$ \\frac{3}{2} $", "$ 3 $"], respuestaCorrecta: "$ \\frac{3}{2} $" }, // 6/4 = 3/2
+    // Pregunta 41
+    { pregunta: "Calcular $ \\lim_{x \\to 3} \\frac{x^2 - 9}{x^2 - 2x - 3} $", opciones: ["$ \\frac{6}{4} $", "$ 0 $", "$ \\frac{3}{2} $", "$ 3 $"], respuestaCorrecta: "$ \\frac{3}{2} $" }, 
+    // Pregunta 42
     { pregunta: "Calcular $ \\lim_{x \\to 1} \\frac{\\sqrt{x} - 1}{x - 1} $", opciones: ["$ 1 $", "$ \\frac{1}{2} $", "$ 0 $", "$ -1 $"], respuestaCorrecta: "$ \\frac{1}{2} $" },
+    // Pregunta 43
     { pregunta: "Calcular $ \\lim_{x \\to 0} (1 + x)^{\\frac{1}{x}} $", opciones: ["$ 1 $", "$ e $", "$ 0 $", "$ \\infty $"], respuestaCorrecta: "$ e $" },
+    // Pregunta 44
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} (\\frac{x}{2x + 1}) $", opciones: ["$ 1 $", "$ 2 $", "$ \\frac{1}{2} $", "$ 0 $"], respuestaCorrecta: "$ \\frac{1}{2} $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{\\cos(x) - 1}{x} $", opciones: ["$ 1 $", "$ 0 $", "$ -1 $", "$ \\infty $"], respuestaCorrecta: "$ 0 $" }, // L'Hôpital
+    // Pregunta 45
+    { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{\\cos(x) - 1}{x} $", opciones: ["$ 1 $", "$ 0 $", "$ -1 $", "$ \\infty $"], respuestaCorrecta: "$ 0 $" }, 
+    // Pregunta 46
     { pregunta: "Calcular $ \\lim_{x \\to 2} \\frac{x - 2}{x^3 - 8} $", opciones: ["$ 0 $", "$ 1 $", "$ \\frac{1}{12} $", "$ 4 $"], respuestaCorrecta: "$ \\frac{1}{12} $" },
+    // Pregunta 47
     { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{e^x - e^{-x}}{x} $", opciones: ["$ 0 $", "$ 2 $", "$ 1 $", "$ \\infty $"], respuestaCorrecta: "$ 2 $" },
+    // Pregunta 48
     { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} $", opciones: ["$ 0 $", "$ 1 $", "$ e $", "$ \\infty $"], respuestaCorrecta: "$ 1 $" },
+    // Pregunta 49
     { pregunta: "Calcular $ \\lim_{x \\to \\infty} (\\frac{3x^2}{x^2 + 2x}) $", opciones: ["$ 0 $", "$ 3 $", "$ 1 $", "$ 2 $"], respuestaCorrecta: "$ 3 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 0} (x \\cot(x)) $", opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "$ -1 $"], respuestaCorrecta: "$ 1 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 5} (x^2 - 25) $", opciones: ["$ 0 $", "$ 10 $", "$ 25 $", "$ 5 $"], respuestaCorrecta: "$ 0 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 1} \\frac{x^2 - 1}{\\sqrt{x} - 1} $", opciones: ["$ 2 $", "$ 4 $", "$ 0 $", "$ 1 $"], respuestaCorrecta: "$ 4 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{\\sin^2(x)}{x} $", opciones: ["$ 0 $", "$ 1 $", "$ 2 $", "$ \\infty $"], respuestaCorrecta: "$ 0 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 1} \\frac{x^2 + x - 2}{x^2 - 1} $", opciones: ["$ 1 $", "$ 0 $", "$ \\frac{3}{2} $", "$ 2 $"], respuestaCorrecta: "$ \\frac{3}{2} $" },
-    { pregunta: "Calcular $ \\lim_{x \\to \\infty} (\\sqrt{x^2 + 4} - x) $", opciones: ["$ \\infty $", "$ 2 $", "$ 0 $", "$ 4 $"], respuestaCorrecta: "$ 0 $" }, // Racionalización
-    { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{\\sin(x)}{x \\cos(x)} $", opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "$ -1 $"], respuestaCorrecta: "$ 1 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to \\infty} \\frac{\\ln(x)}{x} $", opciones: ["$ 1 $", "$ 0 $", "$ \\infty $", "$ e $"], respuestaCorrecta: "$ 0 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 1} \\frac{x - 1}{\\ln(x)} $", opciones: ["$ 0 $", "$ 1 $", "$ e $", "$ \\infty $"], respuestaCorrecta: "$ 1 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 0} (\\frac{1}{x} - \\frac{1}{\\sin(x)}) $", opciones: ["$ 1 $", "$ 0 $", "$ \\infty $", "$ 2 $"], respuestaCorrecta: "$ 0 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to \\infty} \\frac{e^x}{x^2} $", opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "$ e $"], respuestaCorrecta: "$ \\infty $" }, // Jerarquía de Infinitos
-    { pregunta: "Calcular $ \\lim_{x \\to 3} \\frac{x - 3}{x^2 - 9} $", opciones: ["$ 6 $", "$ 0 $", "$ \\frac{1}{6} $", "$ -6 $"], respuestaCorrecta: "$ \\frac{1}{6} $" },
-    { pregunta: "Calcular $ \\lim_{x \\to \\infty} (\\frac{x+5}{x-1}) $", opciones: ["$ 1 $", "$ 5 $", "$ 0 $", "$ -1 $"], respuestaCorrecta: "$ 1 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 0} \\frac{x^2}{\\sin^2(x)} $", opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "$ 2 $"], respuestaCorrecta: "$ 1 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 1} \\frac{\\ln(x^2)}{x - 1} $", opciones: ["$ 1 $", "$ 0 $", "$ 2 $", "$ -1 $"], respuestaCorrecta: "$ 2 $" },
-    { pregunta: "Calcular $ \\lim_{x \\to 4} (x + 3) $", opciones: ["$ 7 $", "$ 4 $", "$ 3 $", "$ 12 $"], respuestaCorrecta: "$ 7 $" }
+    // Pregunta 50
+    { pregunta: "Calcular $ \\lim_{x \\to 0} (x \\cot(x)) $", opciones: ["$ 0 $", "$ 1 $", "$ \\infty $", "$ -1 $"], respuestaCorrecta: "$ 1 $" }
 ];
 
 // --- CONSTANTES Y VARIABLES GLOBALES ---
-const NUM_PREGUNTAS_QUIZ = 10; 
+const NUM_PREGUNTAS_QUIZ = 15; // ¡Se ajusta para solo preguntar 15 de las 50!
 let nombreUsuario = '';
 let puntuacion = 0;
 let indicePreguntaActual = 0;
 let preguntasMezcladas = [];
-let respuestasUsuario = []; // Array para guardar las respuestas para la revisión
+let respuestasUsuario = []; 
 
-// --- ELEMENTOS DEL DOM ---
+// --- ELEMENTOS DEL DOM (Se mantienen igual) ---
 const $nameSection = document.getElementById('name-input-section');
 const $quizContainer = document.getElementById('quiz-container');
 const $questionText = document.getElementById('question-text');
@@ -104,11 +122,8 @@ const $reviewSection = document.getElementById('review-section');
 const $reviewDetails = document.getElementById('review-details');
 const $finalSummary = document.getElementById('final-summary');
 
-// --- LÓGICA DE UTILIDAD ---
+// --- LÓGICA DE UTILIDAD (Se mantienen igual) ---
 
-/**
- * Función para mezclar un array (Algoritmo de Fisher-Yates)
- */
 function shuffle(array) {
     let currentIndex = array.length, randomIndex;
     while (currentIndex != 0) {
@@ -119,9 +134,6 @@ function shuffle(array) {
     return array;
 }
 
-/**
- * Muestra una sección y oculta las demás.
- */
 function mostrarSeccion(id) {
     const sections = [$nameSection, $quizContainer, $scoresSection, $reviewSection];
     sections.forEach(sec => sec.classList.add('hidden'));
@@ -132,11 +144,8 @@ function mostrarSeccion(id) {
     }
 }
 
-// --- LÓGICA PRINCIPAL DEL QUIZ ---
+// --- LÓGICA PRINCIPAL DEL QUIZ (Se adapta la muestra) ---
 
-/**
- * Inicia el quiz: guarda el nombre, selecciona preguntas y comienza el flujo.
- */
 function iniciarQuiz() {
     const playerNameInput = document.getElementById('playerName');
     nombreUsuario = playerNameInput.value.trim();
@@ -146,22 +155,21 @@ function iniciarQuiz() {
         return;
     }
 
-    // Preparar el quiz
+    // 1. Mezclar todas las 50 preguntas.
     let todasMezcladas = shuffle([...preguntas_base]);
+    
+    // 2. Seleccionar solo las 15 para el quiz actual.
     preguntasMezcladas = todasMezcladas.slice(0, NUM_PREGUNTAS_QUIZ);
     
     indicePreguntaActual = 0;
     puntuacion = 0;
-    respuestasUsuario = []; // Limpiar respuestas anteriores
+    respuestasUsuario = []; 
     $currentScore.textContent = puntuacion;
 
     mostrarSeccion('quiz-container');
     mostrarPregunta();
 }
 
-/**
- * Muestra la pregunta actual y sus opciones.
- */
 function mostrarPregunta() {
     if (indicePreguntaActual >= preguntasMezcladas.length) {
         finalizarQuiz();
@@ -170,16 +178,14 @@ function mostrarPregunta() {
 
     const pregunta = preguntasMezcladas[indicePreguntaActual];
     
-    // El usuario NO ve el tipo de pregunta
+    // Se elimina cualquier referencia al tipo de pregunta aquí.
     $questionNumber.textContent = `Pregunta ${indicePreguntaActual + 1}/${preguntasMezcladas.length}`;
     $questionText.innerHTML = pregunta.pregunta; 
 
     $optionsContainer.innerHTML = ''; 
 
-    // Mezclar opciones
     let opcionesMezcladas = shuffle([...pregunta.opciones]);
 
-    // Crear y añadir botones de opción
     opcionesMezcladas.forEach(opcion => {
         const button = document.createElement('button');
         button.innerHTML = opcion; 
@@ -187,24 +193,18 @@ function mostrarPregunta() {
         $optionsContainer.appendChild(button);
     });
 
-    // Forzar a MathJax a renderizar las nuevas ecuaciones
     if (window.MathJax) {
         MathJax.typesetPromise([$questionText, $optionsContainer]);
     }
 }
 
-/**
- * Verifica la respuesta, guarda la selección y avanza.
- */
 function verificarRespuesta(opcionSeleccionada) {
     const pregunta = preguntasMezcladas[indicePreguntaActual];
     
-    // Desactivar botones
     Array.from($optionsContainer.children).forEach(btn => btn.disabled = true);
     
     const esCorrecta = (opcionSeleccionada === pregunta.respuestaCorrecta);
 
-    // 1. Guardar la respuesta para la revisión
     respuestasUsuario.push({
         pregunta: pregunta.pregunta,
         seleccion: opcionSeleccionada,
@@ -212,22 +212,17 @@ function verificarRespuesta(opcionSeleccionada) {
         esCorrecta: esCorrecta
     });
 
-    // 2. Actualizar la puntuación
     if (esCorrecta) {
         puntuacion++;
         $currentScore.textContent = puntuacion;
     }
 
-    // 3. Avanzar
     setTimeout(() => {
         indicePreguntaActual++;
         mostrarPregunta();
     }, 500); 
 }
 
-/**
- * Finaliza el quiz, guarda la puntuación y muestra la sección de revisión.
- */
 function finalizarQuiz() {
     guardarPuntuacion(nombreUsuario, puntuacion);
     cargarPuntuaciones();
@@ -237,10 +232,10 @@ function finalizarQuiz() {
 }
 
 
-// --- LÓGICA DE REVISIÓN DE RESPUESTAS ---
+// --- LÓGICA DE REVISIÓN DE RESPUESTAS (Se mantiene igual) ---
 
 function generarRevision() {
-    $reviewDetails.innerHTML = ''; // Limpiar revisión anterior
+    $reviewDetails.innerHTML = ''; 
     
     $finalSummary.innerHTML = `¡Felicidades, **${nombreUsuario}**! Tu puntuación final es: **${puntuacion}** de **${preguntasMezcladas.length}** correctas.`;
     
@@ -248,10 +243,8 @@ function generarRevision() {
         const reviewItem = document.createElement('div');
         reviewItem.classList.add('review-item');
         
-        // Número de pregunta y texto
         reviewItem.innerHTML = `<p class="review-question">Q${index + 1}: ${item.pregunta}</p>`;
         
-        // Respuesta del usuario
         const userAnswer = document.createElement('p');
         userAnswer.classList.add('review-user-answer');
         
@@ -262,7 +255,6 @@ function generarRevision() {
             userAnswer.classList.add('incorrect');
             userAnswer.innerHTML = `Tu respuesta: ${item.seleccion} (Incorrecta)`;
             
-            // Respuesta correcta
             reviewItem.innerHTML += `<p class="review-correct-answer">La correcta era: ${item.correcta}</p>`;
         }
         
@@ -270,13 +262,12 @@ function generarRevision() {
         $reviewDetails.appendChild(reviewItem);
     });
 
-    // Forzar a MathJax a renderizar las ecuaciones en la revisión
     if (window.MathJax) {
         MathJax.typesetPromise([$reviewDetails, $finalSummary]);
     }
 }
 
-// --- LÓGICA DE PUNTUACIONES LOCALES (LocalStorage) ---
+// --- LÓGICA DE PUNTUACIONES LOCALES (Se mantiene igual) ---
 
 const LS_KEY = 'mathQuizHighScores';
 
@@ -323,6 +314,5 @@ function cargarPuntuaciones() {
 
 window.onload = () => {
     cargarPuntuaciones();
-    // Asegurar que solo la sección de inicio es visible al cargar
     mostrarSeccion('name-input-section'); 
 };
